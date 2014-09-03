@@ -17,37 +17,35 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-          
+
         </dependency>
         <dependency>
-			 <groupId>com.datastax.cassandra</groupId>
-			 <artifactId>cassandra-driver-core</artifactId>
-			 <version>2.0.1</version>
-			  <exclusions>        		
-       	 		<exclusion>
-	       	 		<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-       	 		</exclusion>
-      		</exclusions> 
-		</dependency>
-		 <dependency>
-             <groupId>org.cassandraunit</groupId>
-	        <artifactId>cassandra-unit</artifactId>
-	        <version>2.0.2.1</version>	       
-	         <exclusions>
-        		<exclusion>  
-		          	<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>										
-       	 		</exclusion>
-       	 		<exclusion>
-       	 			<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-       	 		</exclusion>
-      		</exclusions> 
-        </dependency>		
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>2.0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.cassandraunit</groupId>
+            <artifactId>cassandra-unit</artifactId>
+            <version>2.0.2.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
-    
-    
 
     <properties>
         <start-class>org.sree.rest.Application</start-class>
@@ -56,9 +54,9 @@
 
     <build>
         <plugins>
-            <plugin> 
-                <artifactId>maven-compiler-plugin</artifactId> 
-                <version>2.3.2</version> 
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
