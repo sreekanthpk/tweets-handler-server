@@ -15,13 +15,13 @@ import org.sree.storage.AdminService;
 public class CassandraAdminController {
 	
 	@Autowired	
-	private AdminService embeddedCassandraAdminService;
+	private AdminService cassandraAdminService;
 	
 	 @RequestMapping("/createkeyspace/{keyspace}")
 	    public @ResponseBody boolean createSchema(	    		
 	    		@PathVariable(value="keyspace") String keyspace) {
 		 
-	        return embeddedCassandraAdminService.createKeyspace(keyspace);
+	        return cassandraAdminService.createKeyspace(keyspace);
 	    }
 	 
 	 @RequestMapping("/createtable/{keyspace}/{tableName}/{columnKey}/{columns}")
@@ -42,7 +42,7 @@ public class CassandraAdminController {
 		 		
 			}
 		 		 
-	        return embeddedCassandraAdminService.createColumnFamily(keyspace, tableName, columnKey, map);
+	        return cassandraAdminService.createColumnFamily(keyspace, tableName, columnKey, map);
 	    }
 
 }

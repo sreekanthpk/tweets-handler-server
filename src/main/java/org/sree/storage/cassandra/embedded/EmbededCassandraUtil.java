@@ -15,7 +15,7 @@ import org.apache.cassandra.service.CassandraDaemon;
 
 public class EmbededCassandraUtil {
 	
-	public static final String DEFAULT_CASSANDRA_YML_FILE = "C:/work/workspace/restful-server-standalone/src/main/resources/cassandra/cassandra.yaml";
+	public static final String DEFAULT_CASSANDRA_YML_FILE = "/Users/sreekanth/Documents/workspace/restful-server-standalone/src/main/resources/cassandra/cassandra.yaml";
   
     private static CassandraDaemon cassandraDaemon = null;
     static ExecutorService executor;

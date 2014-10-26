@@ -10,6 +10,7 @@ import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.sree.rest.model.Feed;
 import org.sree.storage.FeedRepository;
@@ -22,11 +23,17 @@ import com.datastax.driver.core.Session;
 @Repository
 public class FeedRepositoryImpl implements FeedRepository{
 
-	Session session;
+	private Session session;
+	@Value("${cassandra.mode}")
+	private CassandraMode cassandraMode;
+	
 	
 	@PostConstruct
-	public void init(){	
-		 EmbededCassandraUtil.startEmbeddedCassandra();
+	public void init(){
+		if(cassandraMode==CassandraMode.EMBEDDED){
+			EmbededCassandraUtil.startEmbeddedCassandra();
+			
+		}
 		 
 	}
 	

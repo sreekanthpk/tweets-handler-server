@@ -3,6 +3,7 @@ package org.sree.rest;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.catalina.connector.Connector;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CustomizationBean {
+	
+	@Value("${baseDir}")
+	private String baseDir;
 
 	@Bean
 	public EmbeddedServletContainerFactory servletContainer() {
@@ -25,7 +29,7 @@ public class CustomizationBean {
 		httpsConnector
 				.setAttribute(
 						"keystoreFile",
-						"C:/work/workspace/restful-server-standalone/src/main/resources/keystore/keystore.jks");
+						baseDir+"/restful-server-standalone/src/main/resources/keystore/keystore.jks");
 		httpsConnector.setAttribute("clientAuth", "false");
 		httpsConnector.setAttribute("sslProtocol", "TLS");
 		httpsConnector.setAttribute("SSLEnabled", true);
